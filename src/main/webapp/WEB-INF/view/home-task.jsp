@@ -15,7 +15,7 @@
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-bold text-blue-700">Danh sách công việc</h2>
         <!-- Nút thêm mới -->
-        <a href="/task-create" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow">
+        <a href="/admin/task-create" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow">
             + Thêm công việc
         </a>
     </div>
@@ -47,7 +47,7 @@
                     </c:choose>
                 </td>
                 <td class="border border-gray-300 px-4 py-2 text-center">
-                    <a href="/task-update/${task.id}" class="text-blue-600 hover:text-blue-800 font-medium">Sửa</a>
+                    <a href="/admin/task-update/${task.id}" class="text-blue-600 hover:text-blue-800 font-medium">Sửa</a>
                 </td>
             </tr>
         </c:forEach>
