@@ -53,7 +53,7 @@ public class SecurityConfig {
         http.
                 authorizeHttpRequests(authorize -> authorize
                         .dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.INCLUDE).permitAll()
-                        .requestMatchers("/", "/login","/register","/images/**","/deny").permitAll()
+                        .requestMatchers("/", "/login","/register").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
@@ -68,9 +68,8 @@ public class SecurityConfig {
                         .loginPage("/login")
                         .failureUrl("/login?error")
                         .successHandler(successHandler(userService))
-                        .permitAll())
+                        .permitAll());
 
-                .exceptionHandling(ex -> ex.accessDeniedPage("/deny"));
         return http.build();
     }
 }
